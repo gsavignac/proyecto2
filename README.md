@@ -3,7 +3,7 @@
 Clonar el proyecto
 
 ```sh
-git clone url
+git clone https://github.com/gsavignac/proyecto2.git
 ```
 
 Luego realizar la creacion del entorno virtual y la instalacion de dependencias
