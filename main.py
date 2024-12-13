@@ -1,16 +1,33 @@
 import pkg.utils
 
+def obtener_datos_producto():
+    while True:
+        nombre = input('Ingrese el nombre del producto: ')
+        if nombre:
+            break
+        print("El nombre del producto no puede estar vacío.")
+
+    while True:
+        try:
+            precio = float(input('Ingrese el precio del producto: '))
+            if precio > 0:
+                break
+            else:
+                print("El precio debe ser un número positivo.")
+        except ValueError:
+            print("Ingrese un precio válido.")
+
+    return nombre, precio
+
+
+# Obtener datos de los productos con validación
+producto1, precio1 = obtener_datos_producto()
+producto2, precio2 = obtener_datos_producto()
+producto3, precio3 = obtener_datos_producto()
+
 
 # Función lambda para aplicar un descuento del 10%
 descuento_10 = lambda total: pkg.utils.aplicar_descuento(total, 0.1)
-
-# Crear algunos productos
-producto1 = input('add product1:')
-precio1 = input('add proce1:')
-producto2 = input('add product2:')
-precio2 = input('add proce2:')
-producto3 = input('add product3:')
-precio3 = input('add proce3:')
 
 productos = [
     pkg.utils.crear_producto( producto1, precio1 ),
